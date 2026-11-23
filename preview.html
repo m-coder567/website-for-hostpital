@@ -1,0 +1,1384 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#f8f8f3">
+
+<title>Aagam Health Clinic | Dr. Maulik Mehta</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --green: #245d49;
+  --dark: #173c30;
+  --light-green: #e7eee5;
+  --sage: #cbd8c8;
+  --cream: #f8f8f3;
+  --white: #fff;
+  --text: #20352c;
+  --muted: #77847b;
+  --border: #e6e9df;
+  --radius: 24px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 100px;
+}
+
+body {
+  background: var(--cream);
+  color: var(--text);
+  font-family: 'DM Sans', sans-serif;
+  overflow-x: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font: inherit;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.container {
+  width: min(1180px, 90%);
+  margin: auto;
+}
+
+section {
+  padding: 110px 0;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Manrope', sans-serif;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--green);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.eyebrow::before {
+  content: "";
+  width: 24px;
+  height: 1px;
+  background: var(--green);
+}
+
+.section-title {
+  font-size: clamp(35px, 4.5vw, 53px);
+  line-height: 1.12;
+  letter-spacing: -2.4px;
+  font-weight: 700;
+  color: var(--dark);
+}
+
+.section-description {
+  max-width: 520px;
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.9;
+  margin-top: 18px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 16px 23px;
+  border-radius: 50px;
+  background: var(--green);
+  color: white;
+  font-size: 13px;
+  font-weight: 700;
+  transition: .3s ease;
+}
+
+.btn:hover {
+  background: var(--dark);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 25px #245d4930;
+}
+
+.btn-outline {
+  background: transparent;
+  border: 1px solid #cbd6ca;
+  color: var(--dark);
+}
+
+.btn-outline:hover {
+  background: var(--light-green);
+  color: var(--dark);
+  box-shadow: none;
+}
+
+/* NAVIGATION */
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: #f8f8f3eF;
+  backdrop-filter: blur(18px);
+  border-bottom: 1px solid #e6e9df;
+}
+
+.navbar {
+  min-height: 84px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.brand-icon {
+  width: 43px;
+  height: 43px;
+  display: grid;
+  place-items: center;
+  border-radius: 14px;
+  background: var(--green);
+  color: white;
+  font-size: 25px;
+}
+
+.brand-name {
+  font-family: 'Manrope', sans-serif;
+  color: var(--dark);
+  font-size: 19px;
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: 1px;
+}
+
+.brand-sub {
+  color: var(--muted);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 34px;
+}
+
+.nav-links a {
+  font-size: 12px;
+  font-weight: 600;
+  color: #596b60;
+  transition: .3s;
+}
+
+.nav-links a:hover {
+  color: var(--green);
+}
+
+.nav-links .nav-cta {
+  background: var(--green);
+  color: white;
+  padding: 13px 21px;
+  border-radius: 40px;
+}
+
+.menu-toggle {
+  display: none;
+  border: 0;
+  background: transparent;
+  color: var(--dark);
+  font-size: 27px;
+  cursor: pointer;
+}
+
+/* HERO */
+
+.hero {
+  padding: 65px 0 90px;
+  position: relative;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.05fr .95fr;
+  gap: 75px;
+  align-items: center;
+}
+
+.hero-content {
+  animation: enterUp .9s ease both;
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  background: #e9efe5;
+  padding: 10px 16px;
+  border-radius: 50px;
+  color: var(--green);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  margin-bottom: 28px;
+}
+
+.hero-badge span {
+  width: 7px;
+  height: 7px;
+  background: #5c9d76;
+  border-radius: 50%;
+}
+
+.hero h1 {
+  font-size: clamp(49px, 6vw, 76px);
+  line-height: 1.04;
+  letter-spacing: -4px;
+  color: var(--dark);
+  font-weight: 800;
+}
+
+.hero h1 em {
+  color: var(--green);
+  font-style: normal;
+}
+
+.hero-description {
+  max-width: 465px;
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.9;
+  margin: 25px 0 31px;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 13px;
+}
+
+.hero-note {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 39px;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.note-line {
+  width: 35px;
+  height: 1px;
+  background: var(--sage);
+}
+
+.hero-visual {
+  position: relative;
+  padding: 0 15px 20px 20px;
+  animation: enterUp 1.1s ease both;
+}
+
+.hero-main-image {
+  height: 530px;
+  border-radius: 190px 190px 35px 35px;
+  overflow: hidden;
+  background: var(--sage);
+}
+
+.hero-main-image img {
+  object-position: center 25%;
+  transition: transform 1s ease;
+}
+
+.hero-visual:hover .hero-main-image img {
+  transform: scale(1.035);
+}
+
+.hero-image-decoration {
+  position: absolute;
+  z-index: -1;
+  top: -20px;
+  right: -12px;
+  width: 170px;
+  height: 170px;
+  border: 1px solid #cbd8c8;
+  border-radius: 50%;
+}
+
+.doctor-float-card {
+  position: absolute;
+  bottom: 45px;
+  left: -25px;
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  padding: 17px 20px;
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  box-shadow: 0 15px 45px #173c3012;
+  animation: float 4s ease-in-out infinite;
+}
+
+.float-icon {
+  width: 43px;
+  height: 43px;
+  border-radius: 13px;
+  display: grid;
+  place-items: center;
+  background: var(--light-green);
+  color: var(--green);
+  font-size: 20px;
+}
+
+.doctor-float-card strong {
+  display: block;
+  font-size: 13px;
+  color: var(--dark);
+}
+
+.doctor-float-card small {
+  font-size: 10px;
+  color: var(--muted);
+}
+
+/* INTRO STRIP */
+
+.intro-strip {
+  background: var(--dark);
+  color: white;
+  padding: 28px 0;
+}
+
+.intro-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  text-align: center;
+}
+
+.intro-item {
+  border-right: 1px solid #ffffff25;
+}
+
+.intro-item:last-child {
+  border: 0;
+}
+
+.intro-item strong {
+  font-family: 'Manrope', sans-serif;
+  font-size: 14px;
+  display: block;
+}
+
+.intro-item span {
+  color: #b6c9be;
+  font-size: 11px;
+}
+
+/* ABOUT */
+
+.about-grid {
+  display: grid;
+  grid-template-columns: .95fr 1.05fr;
+  gap: 90px;
+  align-items: center;
+}
+
+.about-visual {
+  position: relative;
+  padding: 0 30px 30px 0;
+}
+
+.about-image {
+  height: 510px;
+  overflow: hidden;
+  border-radius: 35px 35px 140px 35px;
+  background: var(--light-green);
+}
+
+.about-image img {
+  transition: transform .8s ease;
+}
+
+.about-image:hover img {
+  transform: scale(1.04);
+}
+
+.about-caption {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  padding: 23px;
+  width: 210px;
+  background: var(--green);
+  color: white;
+  border-radius: 18px;
+}
+
+.about-caption strong {
+  font-size: 15px;
+  display: block;
+}
+
+.about-caption span {
+  font-size: 10px;
+  color: #d1e0d5;
+}
+
+.about-content .section-title {
+  margin-top: 18px;
+}
+
+.about-content > p {
+  margin-top: 22px;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 2;
+}
+
+.about-facts {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 13px;
+  margin: 29px 0;
+}
+
+.fact {
+  padding: 19px;
+  background: #eef2eb;
+  border-radius: 15px;
+}
+
+.fact strong {
+  display: block;
+  font-size: 13px;
+  color: var(--green);
+}
+
+.fact span {
+  font-size: 11px;
+  color: var(--muted);
+}
+
+/* SERVICES */
+
+.services {
+  background: #edf1e9;
+}
+
+.services-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 30px;
+  margin-bottom: 50px;
+}
+
+.services-heading .section-title {
+  margin-top: 18px;
+}
+
+.services-heading .section-description {
+  max-width: 360px;
+  margin-bottom: 5px;
+}
+
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 19px;
+}
+
+.service-card {
+  background: #fff;
+  border: 1px solid #e5eae2;
+  border-radius: 22px;
+  padding: 30px;
+  min-height: 225px;
+  transition: .4s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.service-card::after {
+  content: "";
+  position: absolute;
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background: #e9f0e8;
+  right: -35px;
+  bottom: -40px;
+  transition: .4s;
+}
+
+.service-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px #173c3010;
+  border-color: #b8cbb9;
+}
+
+.service-card:hover::after {
+  transform: scale(1.6);
+}
+
+.service-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 16px;
+  background: var(--light-green);
+  display: grid;
+  place-items: center;
+  color: var(--green);
+  font-size: 22px;
+  margin-bottom: 23px;
+}
+
+.service-card h3 {
+  font-size: 16px;
+  margin-bottom: 10px;
+  color: var(--dark);
+}
+
+.service-card p {
+  font-size: 12px;
+  color: var(--muted);
+  line-height: 1.9;
+}
+
+/* CLINIC */
+
+.clinic-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.clinic-visual {
+  position: relative;
+}
+
+.clinic-image {
+  height: 430px;
+  overflow: hidden;
+  border-radius: 30px;
+  background: var(--light-green);
+}
+
+.clinic-image img {
+  transition: transform .8s ease;
+}
+
+.clinic-image:hover img {
+  transform: scale(1.04);
+}
+
+.clinic-content .section-title {
+  margin-top: 18px;
+}
+
+.clinic-content > p {
+  color: var(--muted);
+  line-height: 1.9;
+  font-size: 14px;
+  margin: 20px 0;
+}
+
+.contact-row {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.contact-icon {
+  width: 46px;
+  height: 46px;
+  border-radius: 15px;
+  background: var(--light-green);
+  color: var(--green);
+  display: grid;
+  place-items: center;
+  font-size: 19px;
+}
+
+.contact-row strong {
+  display: block;
+  font-size: 13px;
+}
+
+.contact-row span {
+  font-size: 11px;
+  color: var(--muted);
+}
+
+/* CTA */
+
+.cta-section {
+  padding: 30px 0 100px;
+}
+
+.cta-box {
+  position: relative;
+  overflow: hidden;
+  border-radius: 32px;
+  padding: 65px;
+  background: var(--dark);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.cta-box::before {
+  content: "";
+  position: absolute;
+  right: 100px;
+  top: -160px;
+  width: 330px;
+  height: 330px;
+  border: 1px solid #ffffff25;
+  border-radius: 50%;
+}
+
+.cta-box::after {
+  content: "";
+  position: absolute;
+  right: 170px;
+  top: -90px;
+  width: 190px;
+  height: 190px;
+  border: 1px solid #ffffff20;
+  border-radius: 50%;
+}
+
+.cta-content {
+  position: relative;
+  z-index: 1;
+}
+
+.cta-content h2 {
+  color: white;
+  font-size: clamp(30px, 4vw, 44px);
+  line-height: 1.2;
+  letter-spacing: -1.5px;
+}
+
+.cta-content p {
+  color: #b9cec1;
+  font-size: 13px;
+  margin-top: 13px;
+}
+
+.cta-box .btn {
+  position: relative;
+  z-index: 2;
+  background: white;
+  color: var(--dark);
+  white-space: nowrap;
+}
+
+/* FOOTER */
+
+footer {
+  background: #122d24;
+  color: white;
+  padding: 65px 0 25px;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr;
+  gap: 50px;
+  padding-bottom: 45px;
+}
+
+.footer-brand p {
+  max-width: 310px;
+  color: #b4c8bc;
+  font-size: 12px;
+  line-height: 2;
+  margin-top: 20px;
+}
+
+.footer-column h4 {
+  font-size: 13px;
+  margin-bottom: 19px;
+}
+
+.footer-column a {
+  display: block;
+  color: #b4c8bc;
+  font-size: 12px;
+  margin: 12px 0;
+  transition: .3s;
+}
+
+.footer-column a:hover {
+  color: white;
+}
+
+.footer-bottom {
+  padding-top: 22px;
+  border-top: 1px solid #ffffff20;
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  color: #a4b8ab;
+  font-size: 11px;
+}
+
+/* SCROLL ANIMATIONS */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(35px);
+  transition: opacity .8s ease, transform .8s cubic-bezier(.2,.7,.2,1);
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.delay-1 { transition-delay: .12s; }
+.delay-2 { transition-delay: .24s; }
+.delay-3 { transition-delay: .36s; }
+
+@keyframes enterUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+/* RESPONSIVE */
+
+@media(max-width: 900px) {
+  .hero-grid,
+  .about-grid,
+  .clinic-grid {
+    gap: 45px;
+  }
+
+  .hero-main-image {
+    height: 430px;
+  }
+
+  .service-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .about-grid {
+    gap: 50px;
+  }
+}
+
+@media(max-width: 680px) {
+  section {
+    padding: 75px 0;
+  }
+
+  .navbar {
+    min-height: 74px;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 74px;
+    left: 0;
+    width: 100%;
+    padding: 25px 5%;
+    background: var(--cream);
+    border-bottom: 1px solid var(--border);
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 23px;
+  }
+
+  .nav-links.open {
+    display: flex;
+    animation: enterUp .3s ease;
+  }
+
+  .nav-links .nav-cta {
+    display: inline-flex;
+  }
+
+  .hero {
+    padding: 55px 0 65px;
+  }
+
+  .hero-grid,
+  .about-grid,
+  .clinic-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-grid {
+    gap: 55px;
+  }
+
+  .hero h1 {
+    font-size: 53px;
+    letter-spacing: -3px;
+  }
+
+  .hero-description {
+    font-size: 14px;
+  }
+
+  .hero-main-image {
+    height: 430px;
+    border-radius: 160px 160px 28px 28px;
+  }
+
+  .hero-visual {
+    padding-left: 12px;
+  }
+
+  .doctor-float-card {
+    left: -3px;
+    bottom: 25px;
+  }
+
+  .intro-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .intro-item {
+    border: 0;
+  }
+
+  .about-image {
+    height: 420px;
+  }
+
+  .services-heading {
+    display: block;
+  }
+
+  .service-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .service-card {
+    min-height: 190px;
+  }
+
+  .clinic-image {
+    height: 330px;
+  }
+
+  .cta-box {
+    padding: 40px 28px;
+    flex-direction: column;
+    align-items: flex-start;
+    border-radius: 24px;
+  }
+
+  .cta-box .btn {
+    white-space: normal;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 35px 20px;
+  }
+
+  .footer-brand {
+    grid-column: 1 / -1;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+  }
+}
+
+@media(prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    scroll-behavior: auto !important;
+    animation-duration: .01ms !important;
+    transition-duration: .01ms !important;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVIGATION -->
+
+<header>
+  <div class="container navbar">
+
+    <a href="#home" class="brand">
+      <div class="brand-icon">+</div>
+      <div>
+        <div class="brand-name">AAGAM</div>
+        <div class="brand-sub">HEALTH CLINIC</div>
+      </div>
+    </a>
+
+    <button class="menu-toggle" id="menuToggle"
+      aria-label="Toggle navigation" aria-expanded="false">☰</button>
+
+    <nav class="nav-links" id="navLinks">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#clinic">Our Clinic</a>
+      <a href="#contact" class="nav-cta">Appointment ↗</a>
+    </nav>
+
+  </div>
+</header>
+
+
+<!-- HERO -->
+
+<section class="hero" id="home">
+  <div class="container hero-grid">
+
+    <div class="hero-content">
+
+      <div class="hero-badge">
+        <span></span>
+        A PLACE FOR BETTER HEALTH
+      </div>
+
+      <h1>
+        Your health.<br>
+        <em>Our priority.</em>
+      </h1>
+
+      <p class="hero-description">
+        Welcome to Aagam Health Clinic.
+        Explore our healthcare services, learn about
+        the doctor and find the information you need
+        to connect with our clinic.
+      </p>
+
+      <div class="hero-actions">
+        <a href="#contact" class="btn">
+          Appointment Enquiry ↗
+        </a>
+        <a href="#about" class="btn btn-outline">
+          Discover More
+        </a>
+      </div>
+
+      <div class="hero-note">
+        <span class="note-line"></span>
+        Thoughtful healthcare. Personal attention.
+      </div>
+
+    </div>
+
+    <div class="hero-visual">
+
+      <div class="hero-image-decoration"></div>
+
+      <div class="hero-main-image">
+        <img src="unnamed(15).webp"
+          alt="Dr. Maulik N. Mehta">
+      </div>
+
+      <div class="doctor-float-card">
+        <div class="float-icon">✚</div>
+        <div>
+          <strong>Dr. Maulik N. Mehta</strong>
+          <small>General Physician & Surgeon</small>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- INTRO -->
+
+<div class="intro-strip">
+  <div class="container intro-grid">
+
+    <div class="intro-item">
+      <strong>Patient-focused</strong>
+      <span>A welcoming experience</span>
+    </div>
+
+    <div class="intro-item">
+      <strong>General Healthcare</strong>
+      <span>Explore areas of care</span>
+    </div>
+
+    <div class="intro-item">
+      <strong>Aagam Health Clinic</strong>
+      <span>Connect with the clinic</span>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- ABOUT -->
+
+<section id="about">
+  <div class="container about-grid">
+
+    <div class="about-visual reveal">
+
+      <div class="about-image">
+        <img src="unnamed(14).webp"
+          alt="Doctor at Aagam Health Clinic">
+      </div>
+
+      <div class="about-caption">
+        <strong>Dr. Maulik N. Mehta</strong>
+        <span>Meet your doctor</span>
+      </div>
+
+    </div>
+
+    <div class="about-content reveal delay-1">
+
+      <span class="eyebrow">GET TO KNOW YOUR DOCTOR</span>
+
+      <h2 class="section-title">
+        Healthcare with a personal touch.
+      </h2>
+
+      <p>
+        Meet Dr. Maulik N. Mehta at Aagam Health Clinic.
+        Explore clinic information and discover the
+        healthcare areas listed by the practice.
+      </p>
+
+      <p>
+        For details about qualifications, consultations
+        and available services, please contact the clinic.
+      </p>
+
+      <div class="about-facts">
+
+        <div class="fact">
+          <strong>Dr. Maulik N. Mehta</strong>
+          <span>Doctor profile</span>
+        </div>
+
+        <div class="fact">
+          <strong>Aagam Health Clinic</strong>
+          <span>General healthcare</span>
+        </div>
+
+      </div>
+
+      <a href="#contact" class="btn">
+        Connect With Clinic ↗
+      </a>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- SERVICES -->
+
+<section class="services" id="services">
+  <div class="container">
+
+    <div class="services-heading reveal">
+      <div>
+        <span class="eyebrow">AREAS OF CARE</span>
+        <h2 class="section-title">
+          Healthcare, made<br>easier to explore.
+        </h2>
+      </div>
+
+      <p class="section-description">
+        Explore the healthcare areas mentioned
+        by Aagam Health Clinic. Contact the clinic
+        for details and availability.
+      </p>
+    </div>
+
+    <div class="service-grid">
+
+      <article class="service-card reveal">
+        <div class="service-icon">✚</div>
+        <h3>General Consultation</h3>
+        <p>General physician consultation and healthcare enquiries.</p>
+      </article>
+
+      <article class="service-card reveal delay-1">
+        <div class="service-icon">♡</div>
+        <h3>Diabetes & BP</h3>
+        <p>Information about diabetes and blood pressure care.</p>
+      </article>
+
+      <article class="service-card reveal delay-2">
+        <div class="service-icon">◈</div>
+        <h3>Skin Care</h3>
+        <p>Explore skin-related consultation information.</p>
+      </article>
+
+      <article class="service-card reveal">
+        <div class="service-icon">◉</div>
+        <h3>Hair Care</h3>
+        <p>Connect with the clinic for hair-related enquiries.</p>
+      </article>
+
+      <article class="service-card reveal delay-1">
+        <div class="service-icon">✧</div>
+        <h3>Immunity & Wellness</h3>
+        <p>General wellness and immunity-related enquiries.</p>
+      </article>
+
+      <article class="service-card reveal delay-2">
+        <div class="service-icon">⌖</div>
+        <h3>General Health Support</h3>
+        <p>Contact the clinic to explore additional services.</p>
+      </article>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- CLINIC -->
+
+<section id="clinic">
+  <div class="container clinic-grid">
+
+    <div class="clinic-visual reveal">
+      <div class="clinic-image">
+        <img src="unnamed.webp"
+          alt="Aagam Health Clinic exterior">
+      </div>
+    </div>
+
+    <div class="clinic-content reveal delay-1">
+
+      <span class="eyebrow">VISIT OUR CLINIC</span>
+
+      <h2 class="section-title">
+        Find us. Connect with us.
+      </h2>
+
+      <p>
+        Aagam Health Clinic welcomes enquiries
+        about clinic information, consultations
+        and available services.
+      </p>
+
+      <div class="contact-row">
+        <div class="contact-icon">⌖</div>
+        <div>
+          <strong>Clinic Location</strong>
+          <span>Exact address to be confirmed</span>
+        </div>
+      </div>
+
+      <div class="contact-row">
+        <div class="contact-icon">☎</div>
+        <div>
+          <strong>Call the Clinic</strong>
+          <span>+91 9106620770</span>
+        </div>
+      </div>
+
+      <br>
+
+      <a href="https://www.google.com/maps/search/?api=1&query=Aagam+Health+Clinic"
+        target="_blank" rel="noopener noreferrer"
+        class="btn">
+        Explore Location ↗
+      </a>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- CTA -->
+
+<section class="cta-section" id="contact">
+  <div class="container">
+
+    <div class="cta-box reveal">
+
+      <div class="cta-content">
+        <h2>
+          Your next step<br>starts here.
+        </h2>
+
+        <p>
+          Contact Aagam Health Clinic for
+          appointment enquiries and information.
+        </p>
+      </div>
+
+      <a href="tel:+919106620770" class="btn">
+        Call the Clinic ↗
+      </a>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+  <div class="container">
+
+    <div class="footer-grid">
+
+      <div class="footer-brand">
+
+        <a href="#home" class="brand">
+          <div class="brand-icon">+</div>
+          <div>
+            <div class="brand-name" style="color:white">AAGAM</div>
+            <div class="brand-sub" style="color:#b4c8bc">HEALTH CLINIC</div>
+          </div>
+        </a>
+
+        <p>
+          Aagam Health Clinic.
+          Healthcare information, clinic details
+          and appointment enquiries in one place.
+        </p>
+
+      </div>
+
+      <div class="footer-column">
+        <h4>Explore</h4>
+        <a href="#home">Home</a>
+        <a href="#about">About Doctor</a>
+        <a href="#services">Services</a>
+        <a href="#clinic">Our Clinic</a>
+      </div>
+
+      <div class="footer-column">
+        <h4>Get in Touch</h4>
+        <a href="tel:+919106620770">+91 9106620770</a>
+        <a href="#contact">Appointment Enquiry</a>
+        <a href="#clinic">Clinic Location</a>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <span>© 2026 Aagam Health Clinic · Demo concept</span>
+      <span>Designed with care.</span>
+    </div>
+
+  </div>
+</footer>
+
+
+<script>
+// MOBILE NAVIGATION
+
+const menuToggle = document.getElementById('menuToggle');
+const navLinks = document.getElementById('navLinks');
+
+menuToggle.addEventListener('click', () => {
+  const isOpen = navLinks.classList.toggle('open');
+  menuToggle.textContent = isOpen ? '×' : '☰';
+  menuToggle.setAttribute('aria-expanded', isOpen);
+});
+
+document.querySelectorAll('.nav-links a').forEach(link => {
+  link.addEventListener('click', () => {
+    navLinks.classList.remove('open');
+    menuToggle.textContent = '☰';
+    menuToggle.setAttribute('aria-expanded', 'false');
+  });
+});
+
+
+// SCROLL REVEAL ANIMATION
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target);
+    }
+  });
+}, {
+  threshold: 0.12,
+  rootMargin: '0px 0px -35px 0px'
+});
+
+document.querySelectorAll('.reveal').forEach(element => {
+  observer.observe(element);
+});
+
+</script>
+
+</body>
+</html>
